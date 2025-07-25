@@ -67,7 +67,9 @@ def print_handler(address: str, *args: list):
 
     try:
         # プリンターにテキストを送信して印刷し、改行とカットを行う
-        printer.text(text_to_print + "\n")
+        # printer.text(text_to_print + "\n")        
+        img = createImage(text_to_print)
+        printer.image(img)
         printer.cut()
         print("印刷が完了しました。")
     except Exception as e:

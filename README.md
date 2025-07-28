@@ -10,4 +10,9 @@ USB接続された Thermal Printer にテキストを送信するための Pytho
 [README](./Python/README.md)
 
 
-
+## OSC データ
+Cluster のワールドから送信される OSC メッセージの形式は以下の通りです。
+```
+/avatar/parameters/Printer [timestamp (ms)] [デバイス名] [テキスト]
+/avatar/parameters/Printer 1752857438185 Printer "Hello, World!"
+```

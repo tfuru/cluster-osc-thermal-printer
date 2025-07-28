@@ -71,3 +71,10 @@ python main.py --vendor 0x0483 --product 0x5840 --test "Hello World"
 ## フォントをダウンロードする
 FLOPDesignFont.ttf をダウンロードして、`fonts` フォルダに配置してください。  
 フォントは、[FLOPDesignFont](https://flopdesign.booth.pm/items/2296481) から入手できます。　　
+
+## OSC データ
+Cluster のワールドから送信される OSC メッセージの形式は以下の通りです。
+```
+/avatar/parameters/Printer [timestamp (ms)] [デバイス名] [テキスト]
+/avatar/parameters/Printer 1752857438185 Printer "Hello, World!"
+```

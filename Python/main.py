@@ -47,6 +47,8 @@ def test(args):
     except Exception as e:
         print(f"印刷中にエラーが発生しました: {e}")
 
+# OSCメッセージを受け取り、プリンターに印刷するハンドラ
+# /avatar/parameters/Printer [timestamp (ms)] [デバイス名] [テキスト]
 def print_handler(address: str, *args: list):
     """
     OSCメッセージを受け取り、プリンターに印刷するハンドラ
@@ -56,13 +58,13 @@ def print_handler(address: str, *args: list):
         print("エラー: プリンターが初期化されていません。")
         return
 
-    # OSCメッセージの引数が1つ以上あるか確認
+    # OSCメッセージの引数確認
     if not args:
         print("警告: 印刷するテキストがありません。")
         return
 
-    # 最初の引数をテキストとして取得
-    text_to_print = str(args[0])
+    # args から テキストを取得
+    text_to_print = str(args[2])
     print(f"受信したテキスト: {text_to_print}")
 
     try:
@@ -89,7 +91,7 @@ def main():
     parser.add_argument("--port", type=int, default=9000, help="OSCサーバーが使用するポート番号")
     parser.add_argument("--vendor", default="0483", type=lambda x: int(x, 0), required=True, help="プリンターのベンダーID")
     parser.add_argument("--product", default="5840", type=lambda x: int(x, 0), required=True, help="プリンターのプロダクトID")
-    parser.add_argument("--osc-address", default="/osc/print", help="待機するOSCアドレス")
+    parser.add_argument("--osc-address", default="/avatar/parameters/Printer", help="待機するOSCアドレス")
     parser.add_argument("--test", default="", help="テスト用オプション")
     args = parser.parse_args()
 

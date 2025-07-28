@@ -9,6 +9,9 @@ Thermal Printer に送信するためのコードです。
 USB接続された Thermal Printer にテキストを送信するための Python スクリプト  
 [README](./Python/README.md)
 
+## Unity (Creator Kit Script) コード
+ワールドで入力されたテキストを、OSC メッセージを送信する Unity スクリプト
+[README](./Unity/README.md)]
 
 ## OSC データ
 Cluster のワールドから送信される OSC メッセージの形式は以下の通りです。

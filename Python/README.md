@@ -63,9 +63,10 @@ pip list
 
 ```bash
 . venv/bin/activate
-python main.py --ip 127.0.0.1 --port 9000 --osc-address /osc/print --vendor 0x0483 --product 0x5840
+python main.py --ip 127.0.0.1 --port 9001 --vendor 0x0483 --product 0x5840 --osc-address /avatar/parameters/Printer
 
 python main.py --vendor 0x0483 --product 0x5840 --test "Hello World"
+python main.py --vendor 0x0483 --product 0x5840 --test "こんにちは"
 ```
 
 ## フォントをダウンロードする
